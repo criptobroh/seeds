@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-bg-soft: #f9faf9;
+  --color-bg-muted: #f0f4f0;
+
+  --color-green: #00b37d;
+  --color-green-dark: #009368;
+  --color-green-light: #eaf8f2;
+  --color-green-muted: #c4ead9;
+
+  --color-text: #111111;
+  --color-text-secondary: #5a5a5a;
+  --color-text-muted: #999999;
+
+  --color-border: #e4e4e4;
+  --color-border-light: #eeeeee;
+
+  --font-main: 'Montserrat', sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-hero: 3.25rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --max-width: 1060px;
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-main);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: var(--text-hero); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-2xl); }
+
+p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--color-green);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+::selection {
+  background: var(--color-green-light);
+  color: var(--color-text);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  :root {
+    --text-hero: 2.25rem;
+    --text-4xl: 1.75rem;
+    --text-3xl: 1.5rem;
+    --text-2xl: 1.25rem;
+  }
+  .nav-links { display: none !important; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-3 { grid-template-columns: 1fr !important; }
+  .grid-2 { grid-template-columns: 1fr !important; }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  :root {
+    --text-hero: 1.75rem;
+    --text-4xl: 1.5rem;
+    --text-3xl: 1.25rem;
+    --text-2xl: 1.125rem;
+    --text-lg: 1rem;
+  }
+  .grid-4 { grid-template-columns: 1fr !important; }
+  section { padding-left: var(--space-4) !important; padding-right: var(--space-4) !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}

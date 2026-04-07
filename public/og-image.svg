@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="white"/>
+
+  <!-- Seeds logo (simplified green spiral) -->
+  <circle cx="480" cy="280" r="40" stroke="#00CA8C" stroke-width="8" fill="none"/>
+  <path d="M480 240 C 510 240, 520 260, 520 280 C 520 300, 510 320, 480 320" stroke="#00CA8C" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  <!-- Seeds text -->
+  <text x="540" y="295" font-family="Arial, sans-serif" font-weight="900" font-size="48" fill="#1a1a1a">Seeds</text>
+
+  <!-- x separator -->
+  <text x="600" y="360" font-family="Arial, sans-serif" font-weight="400" font-size="24" fill="#999" text-anchor="middle">x</text>
+
+  <!-- NoCoda blue badge -->
+  <rect x="555" y="380" rx="12" ry="12" width="36" height="36" fill="#1D5EF4"/>
+  <text x="573" y="406" font-family="Arial Black, sans-serif" font-weight="900" font-size="22" fill="white" text-anchor="middle">N</text>
+
+  <!-- NoCoda text -->
+  <text x="602" y="408" font-family="Arial, sans-serif" font-weight="800" font-size="28" fill="#1a1a1a">NoCoda</text>
+
+  <!-- Tagline -->
+  <text x="600" y="470" font-family="Arial, sans-serif" font-weight="500" font-size="22" fill="#888" text-anchor="middle">Capacitacion en IA estructurada</text>
+
+  <!-- Green accent line -->
+  <rect x="500" y="510" width="200" height="3" rx="2" fill="#00CA8C"/>
+</svg>

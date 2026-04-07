@@ -1,0 +1,4 @@
+/* Utility classes - minimal, light theme */
+.accent-text {
+  color: var(--color-green);
+}
