@@ -1,26 +1,19 @@
 import { ScrollReveal } from '../ui/ScrollReveal'
-import { CheckCircle2, X } from 'lucide-react'
+import { CheckCircle2, XCircle } from 'lucide-react'
 
-const without = [
-  'Prompts sueltos, no compartidos',
-  'Resultados inconsistentes',
-  'Sin auditoria ni gobernanza',
-  'Conocimiento aislado en personas',
-]
-
-const withSkills = [
-  'Skills estructurados y compartidos',
-  'Output predecible y consistente',
-  'Auditoria y gobernanza integrada',
-  'Conocimiento que escala con la org',
+const comparison = [
+  { without: 'Prompts sueltos y no compartidos', withS: 'Skills compartidos entre el equipo' },
+  { without: 'Resultados inconsistentes', withS: 'Output predecible y consistente' },
+  { without: 'Sin auditoria ni gobernanza', withS: 'Auditoria y gobernanza integrada' },
+  { without: 'Conocimiento aislado en personas', withS: 'Conocimiento institucional escalable' },
 ]
 
 const learning = [
-  'Que son los Skills y por que cambian la forma de usar IA',
-  'Como crear Skills adaptados a los roles de la organizacion',
-  'Como usar Skills en flujos de trabajo reales',
-  'Como modificar y versionar Skills existentes',
-  'Como auditar Skills para garantizar calidad y seguridad',
+  'Que son los Skills y como cambian el uso de IA',
+  'Como crear Skills para cada rol del equipo',
+  'Como usarlos en flujos de trabajo reales',
+  'Como modificar y versionar Skills',
+  'Como auditarlos para garantizar calidad',
 ]
 
 export function SolutionSection() {
@@ -41,32 +34,31 @@ export function SolutionSection() {
           </div>
         </ScrollReveal>
 
-        {/* Comparison */}
+        {/* Comparison table */}
         <ScrollReveal delay={80}>
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)', marginBottom: 'var(--space-12)', maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto' }}>
-            <div style={{ padding: 'var(--space-6)', borderRadius: 'var(--radius-md)', background: 'var(--color-bg-soft)', border: '1px solid var(--color-border-light)' }}>
-              <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-text-muted)', marginTop: 0, marginBottom: 'var(--space-4)' }}>Sin Skills</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-                {without.map((item) => (
-                  <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)' }}>
-                    <X size={14} color="#ccc" style={{ flexShrink: 0 }} />
-                    {item}
-                  </div>
-                ))}
+          <div style={{ maxWidth: '680px', marginLeft: 'auto', marginRight: 'auto', marginBottom: 'var(--space-12)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-border-light)', overflow: 'hidden' }}>
+            {/* Header */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+              <div style={{ padding: 'var(--space-4) var(--space-6)', background: 'var(--color-bg-soft)', borderBottom: '1px solid var(--color-border-light)', borderRight: '1px solid var(--color-border-light)' }}>
+                <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-text-muted)', margin: 0 }}>Sin Skills</p>
+              </div>
+              <div style={{ padding: 'var(--space-4) var(--space-6)', background: 'var(--color-green-light)', borderBottom: '1px solid var(--color-green-muted)' }}>
+                <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-green-dark)', margin: 0 }}>Con Skills</p>
               </div>
             </div>
-
-            <div style={{ padding: 'var(--space-6)', borderRadius: 'var(--radius-md)', background: 'var(--color-green-light)', border: '1px solid var(--color-green-muted)' }}>
-              <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-green-dark)', marginTop: 0, marginBottom: 'var(--space-4)' }}>Con Skills</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-                {withSkills.map((item) => (
-                  <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--color-text)' }}>
-                    <CheckCircle2 size={14} color="var(--color-green)" style={{ flexShrink: 0 }} />
-                    {item}
-                  </div>
-                ))}
+            {/* Rows */}
+            {comparison.map((row, i) => (
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: i < comparison.length - 1 ? '1px solid var(--color-border-light)' : 'none' }}>
+                <div style={{ padding: 'var(--space-3) var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', borderRight: '1px solid var(--color-border-light)' }}>
+                  <XCircle size={14} color="#ccc" style={{ flexShrink: 0 }} />
+                  <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-muted)' }}>{row.without}</span>
+                </div>
+                <div style={{ padding: 'var(--space-3) var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', background: 'rgba(234,248,242,0.5)' }}>
+                  <CheckCircle2 size={14} color="var(--color-green)" style={{ flexShrink: 0 }} />
+                  <span style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text)', fontWeight: 500 }}>{row.withS}</span>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </ScrollReveal>
 
